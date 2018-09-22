@@ -158,8 +158,6 @@ def read_beatmap(f,version):
     read_int(f)
     ret['mania_scroll_speed']=read_byte(f)
 
-    print(ret['beatmapset_id'])
-
     return Beatmap(**ret)
 
 OsuDb=collections.namedtuple('OsuDb',
