@@ -81,7 +81,7 @@ def read_datetime(f):
 
 Beatmap=collections.namedtuple('Beatmap',
     'artist_name,artist_name_unicode,song_title,song_title_unicode,'
-    'creater_name,difficulty,audio_file_name,md5,osu_file_name,'
+    'creator_name,difficulty,audio_file_name,md5,osu_file_name,'
     'ranked_status,n_hitcircles,n_sliders,n_spinners,last_modification_time,'
     'approach_rate,circle_size,hp_drain,overall_difficulty,slider_velocity,'
     'star_rating_standard,star_rating_taiko,star_rating_ctb,star_rating_mania,'
@@ -99,7 +99,7 @@ def read_beatmap(f,version):
     ret['artist_name_unicode']=read_string(f)
     ret['song_title']=read_string(f)
     ret['song_title_unicode']=read_string(f)
-    ret['creater_name']=read_string(f)
+    ret['creator_name']=read_string(f)
     ret['difficulty']=read_string(f)
     ret['audio_file_name']=read_string(f)
     ret['md5']=read_string(f)
@@ -160,7 +160,7 @@ def read_beatmap(f,version):
 
     return Beatmap(**ret)
 
-OsuDb=collections.namedtuple('OsuDb',
+OsuDB=collections.namedtuple('OsuDB',
     'version,foler_count,account_unlocked,date_unlocked,player_name,beatmaps')
 def read_osudb(f):
     version=read_int(f)
@@ -174,7 +174,7 @@ def read_osudb(f):
         beatmaps.append(read_beatmap(f,version))
     unkown=read_int(f)
 
-    return OsuDb(version,folder_count,account_unlocked,
+    return OsuDB(version,folder_count,account_unlocked,
         date_unlocked,player_name,beatmaps)
 
 # For debugging
