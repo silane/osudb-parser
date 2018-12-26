@@ -4,6 +4,9 @@ import datetime
 import collections
 
 
+__all__ = ['read_osudb']
+
+
 def read_byte(f):
     data = f.read(1)
     return int.from_bytes(data, 'little')
