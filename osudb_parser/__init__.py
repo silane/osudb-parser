@@ -185,7 +185,7 @@ def read_beatmap(f, version):
 
 OsuDB = collections.namedtuple(
     'OsuDB',
-    'version,foler_count,account_unlocked,date_unlocked,player_name,beatmaps')
+    'version,folder_count,account_unlocked,date_unlocked,player_name,beatmaps')
 
 
 def read_osudb(f):
