@@ -116,7 +116,7 @@ Beatmap = collections.namedtuple(
 
 def read_beatmap(f, version):
     ret = {}
-    # size=read_int(f)
+    size = read_int(f)
     ret['artist_name'] = read_string(f)
     ret['artist_name_unicode'] = read_string(f)
     ret['song_title'] = read_string(f)
